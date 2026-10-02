@@ -1,8 +1,72 @@
+# ─── Dependencies ────────────────────────────────────────────────────────────
 node_modules/
+.pnp
+.pnp.js
+
+# ─── Build Outputs ────────────────────────────────────────────────────────────
 dist/
+build/
+out/
+.output/
+
+# ─── Vite / Bundler Cache ────────────────────────────────────────────────────
+.vite/
+*.local
+
+# ─── Environment Variables ───────────────────────────────────────────────────
 .env
 .env.*
 !.env.example
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
 *.log
-server/*.tmp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs/
+
+# ─── OS Generated ────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# ─── Editor / IDE ────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+
+# ─── Agent & Automation Scripts ──────────────────────────────────────────────
+# One-off CJS scripts used during development by the AI agent
+frontend/write_app.cjs
+frontend/write_css.cjs
+frontend/rewrite.cjs
+frontend/fix_app.cjs
+frontend/darken.cjs
+frontend/add_qr.cjs
+frontend/findqr.cjs
+frontend/finance_p1.cjs
 __agent__/
+
+# ─── Scratch / Cache Dumps ───────────────────────────────────────────────────
+source-cache/
+
+# ─── TypeScript ──────────────────────────────────────────────────────────────
+*.tsbuildinfo
+
+# ─── Testing ─────────────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ─── Misc ────────────────────────────────────────────────────────────────────
+*.tmp
+*.bak
+*.orig
+server/*.tmp
