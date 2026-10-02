@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Havenly — Visitor Self Check-in</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Geist', ui-sans-serif, sans-serif;
+      background: #0a0a0a;
+      color: #e8e8e8;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 32px;
+      width: 100%;
+      max-width: 460px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .brand-mark {
+      width: 30px; height: 30px;
+      background: #10b981;
+      border-radius: 8px;
+      display: grid; place-items: center;
+      color: #000; font-weight: 700; font-size: 14px;
+    }
+    .brand-name { font-size: 18px; font-weight: 700; }
+    .brand-name span { color: #10b981; }
+    h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.6px; margin-bottom: 6px; }
+    p.sub { font-size: 13px; color: #888; margin-bottom: 28px; line-height: 1.5; }
+    label { display: block; font-size: 11px; font-weight: 500; color: #aaa; margin-bottom: 6px; }
+    input, select {
+      width: 100%; padding: 10px 12px;
+      background: #1a1a1a; border: 1px solid #2a2a2a;
+      border-radius: 8px; color: #e8e8e8;
+      font-size: 13px; font-family: inherit;
+      transition: border-color 0.15s;
+      outline: none;
+      margin-bottom: 16px;
+    }
+    input:focus, select:focus { border-color: #10b981; box-shadow: 0 0 0 3px rgba(16,185,129,0.1); }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+    @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
+    button[type="submit"] {
+      width: 100%; padding: 12px;
+      background: #10b981; color: #000;
+      font-weight: 700; font-size: 14px;
+      border: none; border-radius: 8px; cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 8px;
+      font-family: inherit;
+    }
+    button[type="submit"]:hover { background: #0ea471; transform: translateY(-1px); }
+    button[type="submit"]:active { transform: translateY(0); }
+    .spinner { display: none; }
+    .success-state {
+      display: none; text-align: center; padding: 20px 0;
+    }
+    .success-icon {
+      width: 60px; height: 60px; background: rgba(16,185,129,0.15);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px; font-size: 28px;
+    }
+    .success-state h2 { font-size: 20px; margin-bottom: 8px; }
+    .success-state p { color: #888; font-size: 13px; line-height: 1.6; }
+    .note {
+      font-size: 11px; color: #555; text-align: center; margin-top: 20px;
+    }
+    .note a { color: #10b981; text-decoration: none; }
+    hr { border: none; border-top: 1px solid #1a1a1a; margin: 20px 0; }
+    .section-title {
+      font-size: 10px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; color: #555; margin-bottom: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">
+      <div class="brand-mark">H</div>
+      <span class="brand-name">Havenly<span>.</span></span>
+    </div>
+
+    <div id="form-section">
+      <h1>Visitor Check-in</h1>
+      <p class="sub">Fill in your details to get a gate pass. The host resident will be notified immediately.</p>
+
+      <form id="checkin-form">
+        <div class="section-title">Your Information</div>
+        <div class="grid">
+          <div>
+            <label for="v-name">Full Name *</label>
+            <input id="v-name" name="name" type="text" required placeholder="e.g. Rahul Gupta" />
+          </div>
+          <div>
+            <label for="v-phone">Phone Number *</label>
+            <input id="v-phone" name="phone" type="tel" required placeholder="+91 98765 43210" />
+          </div>
+          <div>
+            <label for="v-id-type">ID Type</label>
+            <select id="v-id-type" name="idType">
+              <option>Aadhar Card</option>
+              <option>Driving Licence</option>
+              <option>Passport</option>
+              <option>Voter ID</option>
+              <option>PAN Card</option>
+            </select>
+          </div>
+          <div>
+            <label for="v-id-num">ID Number</label>
+            <input id="v-id-num" name="idNumber" type="text" placeholder="XXXX-XXXX-1234" />
+          </div>
+        </div>
+
+        <hr />
+        <div class="section-title">Visit Details</div>
+        <div class="grid">
+          <div>
+            <label for="v-host">Host Name / Room *</label>
+            <input id="v-host" name="host" type="text" required placeholder="e.g. Priya Sharma, A-101" />
+          </div>
+          <div>
+            <label for="v-purpose">Purpose of Visit</label>
+            <select id="v-purpose" name="purpose">
+              <option>Family visit</option>
+              <option>Friend</option>
+              <option>Delivery</option>
+              <option>Official</option>
+              <option>Interview</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="v-vehicle">Vehicle Number (optional)</label>
+            <input id="v-vehicle" name="vehicle" type="text" placeholder="KA-01-AB-1234" />
+          </div>
+          <div>
+            <label for="v-duration">Expected Duration</label>
+            <select id="v-duration" name="duration">
+              <option>Less than 1 hour</option>
+              <option>1–2 hours</option>
+              <option>Half day</option>
+              <option>Full day</option>
+              <option>Overnight</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" id="submit-btn">✓ Request Gate Pass</button>
+      </form>
+
+      <p class="note">Your data is only used for security purposes.<br/>By submitting you agree to <a href="#">Havenly's privacy policy</a>.</p>
+    </div>
+
+    <div id="success-section" class="success-state">
+      <div class="success-icon">✓</div>
+      <h2>Pass Requested!</h2>
+      <p>Your request has been sent to <strong id="host-display">the host</strong>.<br/>
+      Please wait at the gate. You'll receive an SMS once approved.<br/><br/>
+      Show your ID proof to the security guard on arrival.</p>
+      <p class="note" style="margin-top:24px">Powered by <a href="#">Havenly Property Management</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('checkin-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = 'Submitting…';
+      btn.disabled = true;
+
+      const host = document.getElementById('v-host').value || 'the host';
+      document.getElementById('host-display').textContent = host;
+
+      // Simulate API call
+      setTimeout(() => {
+        document.getElementById('form-section').style.display = 'none';
+        document.getElementById('success-section').style.display = 'block';
+      }, 1200);
+    });
+  </script>
+</body>
+</html>

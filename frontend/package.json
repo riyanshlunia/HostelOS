@@ -1,0 +1,39 @@
+{
+  "name": "havenly-os",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Havenly — modern co-living operations platform",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "check": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "concurrently": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "framer-motion": "^13.4.6",
+    "helmet": "latest",
+    "lucide-react": "latest",
+    "qrcode.react": "^4.2.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "recharts": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/express": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "supertest": "^7.3.0",
+    "typescript": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  }
+}

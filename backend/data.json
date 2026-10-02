@@ -1,0 +1,524 @@
+{
+  "users": [
+    {
+      "id": "user-demo",
+      "username": "demo",
+      "name": "Demo Admin",
+      "email": "demo@campus.local",
+      "password": "demo123",
+      "role": "admin",
+      "avatar": "DA"
+    },
+    {
+      "id": "user-warden",
+      "username": "warden",
+      "name": "Priya Sharma",
+      "email": "warden@campus.local",
+      "password": "warden123",
+      "role": "warden",
+      "avatar": "PS"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "room-101",
+      "number": "101",
+      "block": "A",
+      "floor": 1,
+      "type": "four sharing",
+      "capacity": 4,
+      "gender": "mixed",
+      "amenities": [
+        "Wi-Fi",
+        "Study table",
+        "Attached bath"
+      ],
+      "status": "partial",
+      "beds": [
+        {
+          "id": "101-1",
+          "label": "Bed 1",
+          "status": "occupied",
+          "residentId": "resident-001",
+          "moveInDate": "2024-07-10"
+        },
+        {
+          "id": "101-2",
+          "label": "Bed 2",
+          "status": "occupied",
+          "residentId": "resident-002",
+          "moveInDate": "2024-07-12"
+        },
+        {
+          "id": "101-3",
+          "label": "Bed 3",
+          "status": "available",
+          "residentId": null,
+          "moveInDate": null
+        },
+        {
+          "id": "101-4",
+          "label": "Bed 4",
+          "status": "available",
+          "residentId": null,
+          "moveInDate": null
+        }
+      ],
+      "createdAt": "2024-06-01T08:00:00.000Z"
+    },
+    {
+      "id": "room-102",
+      "number": "102",
+      "block": "A",
+      "floor": 1,
+      "type": "two sharing",
+      "capacity": 2,
+      "gender": "female",
+      "amenities": [
+        "Wi-Fi",
+        "Balcony"
+      ],
+      "status": "full",
+      "beds": [
+        {
+          "id": "102-1",
+          "label": "Bed 1",
+          "status": "occupied",
+          "residentId": "resident-003",
+          "moveInDate": "2024-07-08"
+        },
+        {
+          "id": "102-2",
+          "label": "Bed 2",
+          "status": "occupied",
+          "residentId": "resident-004",
+          "moveInDate": "2024-07-08"
+        }
+      ],
+      "createdAt": "2024-06-01T08:00:00.000Z"
+    },
+    {
+      "id": "room-201",
+      "number": "201",
+      "block": "B",
+      "floor": 2,
+      "type": "three sharing",
+      "capacity": 3,
+      "gender": "male",
+      "amenities": [
+        "Wi-Fi",
+        "Study table"
+      ],
+      "status": "partial",
+      "beds": [
+        {
+          "id": "201-1",
+          "label": "Bed 1",
+          "status": "occupied",
+          "residentId": "resident-005",
+          "moveInDate": "2024-07-15"
+        },
+        {
+          "id": "201-2",
+          "label": "Bed 2",
+          "status": "available",
+          "residentId": null,
+          "moveInDate": null
+        },
+        {
+          "id": "201-3",
+          "label": "Bed 3",
+          "status": "available",
+          "residentId": null,
+          "moveInDate": null
+        }
+      ],
+      "createdAt": "2024-06-01T08:00:00.000Z"
+    },
+    {
+      "id": "room-202",
+      "number": "202",
+      "block": "B",
+      "floor": 2,
+      "type": "two sharing",
+      "capacity": 2,
+      "gender": "male",
+      "amenities": [
+        "Wi-Fi",
+        "Attached bath"
+      ],
+      "status": "maintenance",
+      "beds": [
+        {
+          "id": "202-1",
+          "label": "Bed 1",
+          "status": "maintenance",
+          "residentId": null,
+          "moveInDate": null
+        },
+        {
+          "id": "202-2",
+          "label": "Bed 2",
+          "status": "maintenance",
+          "residentId": null,
+          "moveInDate": null
+        }
+      ],
+      "createdAt": "2024-06-01T08:00:00.000Z"
+    }
+  ],
+  "residents": [
+    {
+      "id": "resident-001",
+      "admissionNo": "ADM-2024-001",
+      "name": "Aarav Mehta",
+      "email": "aarav.mehta@example.com",
+      "phone": "+91 98765 10001",
+      "course": "B.Tech Computer Science",
+      "year": 2,
+      "guardianName": "Rakesh Mehta",
+      "guardianPhone": "+91 98765 20001",
+      "status": "active",
+      "roomId": "room-101",
+      "bedId": "101-1",
+      "joinedOn": "2024-07-10",
+      "createdAt": "2024-07-01T08:00:00.000Z"
+    },
+    {
+      "id": "resident-002",
+      "admissionNo": "ADM-2024-002",
+      "name": "Kabir Singh",
+      "email": "kabir.singh@example.com",
+      "phone": "+91 98765 10002",
+      "course": "BBA Finance",
+      "year": 3,
+      "guardianName": "Manoj Singh",
+      "guardianPhone": "+91 98765 20002",
+      "status": "active",
+      "roomId": "room-101",
+      "bedId": "101-2",
+      "joinedOn": "2024-07-12",
+      "createdAt": "2024-07-01T08:00:00.000Z"
+    },
+    {
+      "id": "resident-003",
+      "admissionNo": "ADM-2024-003",
+      "name": "Ananya Rao",
+      "email": "ananya.rao@example.com",
+      "phone": "+91 98765 10003",
+      "course": "B.Des Interaction Design",
+      "year": 2,
+      "guardianName": "Vikram Rao",
+      "guardianPhone": "+91 98765 20003",
+      "status": "active",
+      "roomId": "room-102",
+      "bedId": "102-1",
+      "joinedOn": "2024-07-08",
+      "createdAt": "2024-07-01T08:00:00.000Z"
+    },
+    {
+      "id": "resident-004",
+      "admissionNo": "ADM-2024-004",
+      "name": "Ishita Kapoor",
+      "email": "ishita.kapoor@example.com",
+      "phone": "+91 98765 10004",
+      "course": "B.Sc Psychology",
+      "year": 1,
+      "guardianName": "Neeraj Kapoor",
+      "guardianPhone": "+91 98765 20004",
+      "status": "active",
+      "roomId": "room-102",
+      "bedId": "102-2",
+      "joinedOn": "2024-07-08",
+      "createdAt": "2024-07-01T08:00:00.000Z"
+    },
+    {
+      "id": "resident-005",
+      "admissionNo": "ADM-2024-005",
+      "name": "Rohan Verma",
+      "email": "rohan.verma@example.com",
+      "phone": "+91 98765 10005",
+      "course": "B.Tech Mechanical Engineering",
+      "year": 4,
+      "guardianName": "Suresh Verma",
+      "guardianPhone": "+91 98765 20005",
+      "status": "active",
+      "roomId": "room-201",
+      "bedId": "201-1",
+      "joinedOn": "2024-07-15",
+      "createdAt": "2024-07-01T08:00:00.000Z"
+    },
+    {
+      "id": "resident-006",
+      "admissionNo": "ADM-2023-018",
+      "name": "Meera Nair",
+      "email": "meera.nair@example.com",
+      "phone": "+91 98765 10006",
+      "course": "MCA",
+      "year": 2,
+      "guardianName": "Sanjay Nair",
+      "guardianPhone": "+91 98765 20006",
+      "status": "inactive",
+      "roomId": null,
+      "bedId": null,
+      "joinedOn": "2023-07-12",
+      "createdAt": "2023-07-01T08:00:00.000Z"
+    }
+  ],
+  "complaints": [
+    {
+      "id": "complaint-001",
+      "residentId": "resident-001",
+      "category": "maintenance",
+      "title": "Water leakage in bathroom",
+      "description": "The bathroom tap has been leaking since yesterday.",
+      "priority": "high",
+      "status": "open",
+      "comments": [],
+      "createdAt": "2025-01-12T09:15:00.000Z",
+      "updatedAt": "2025-01-12T09:15:00.000Z"
+    },
+    {
+      "id": "complaint-002",
+      "residentId": "resident-003",
+      "category": "mess",
+      "title": "Dinner served late",
+      "description": "Dinner was served 40 minutes after the scheduled time.",
+      "priority": "medium",
+      "status": "in_progress",
+      "comments": [
+        {
+          "id": "comment-001",
+          "authorId": "user-warden",
+          "authorName": "Priya Sharma",
+          "message": "The mess team has been notified.",
+          "createdAt": "2025-01-11T13:00:00.000Z"
+        }
+      ],
+      "createdAt": "2025-01-11T11:30:00.000Z",
+      "updatedAt": "2025-01-11T13:00:00.000Z"
+    },
+    {
+      "id": "complaint-003",
+      "residentId": "resident-005",
+      "category": "internet",
+      "title": "Wi-Fi signal is weak",
+      "description": "Wi-Fi is unavailable near the study table in room 201.",
+      "priority": "low",
+      "status": "resolved",
+      "comments": [],
+      "createdAt": "2025-01-08T08:00:00.000Z",
+      "updatedAt": "2025-01-10T15:20:00.000Z"
+    }
+  ],
+  "payments": [
+    {
+      "id": "payment-001",
+      "residentId": "resident-001",
+      "amount": 8500,
+      "type": "rent",
+      "month": "2025-01",
+      "status": "paid",
+      "method": "upi",
+      "reference": "PAY-250101-001",
+      "paidAt": "2025-01-02T10:00:00.000Z",
+      "createdAt": "2025-01-02T10:00:00.000Z"
+    },
+    {
+      "id": "payment-002",
+      "residentId": "resident-002",
+      "amount": 8500,
+      "type": "rent",
+      "month": "2025-01",
+      "status": "paid",
+      "method": "card",
+      "reference": "PAY-250102-002",
+      "paidAt": "2025-01-03T11:10:00.000Z",
+      "createdAt": "2025-01-03T11:10:00.000Z"
+    },
+    {
+      "id": "payment-003",
+      "residentId": "resident-003",
+      "amount": 9000,
+      "type": "rent",
+      "month": "2025-01",
+      "status": "pending",
+      "method": "",
+      "reference": "",
+      "paidAt": null,
+      "createdAt": "2025-01-01T08:00:00.000Z"
+    },
+    {
+      "id": "payment-004",
+      "residentId": "resident-004",
+      "amount": 9000,
+      "type": "rent",
+      "month": "2025-01",
+      "status": "overdue",
+      "method": "",
+      "reference": "",
+      "paidAt": null,
+      "createdAt": "2025-01-01T08:00:00.000Z"
+    },
+    {
+      "id": "payment-005",
+      "residentId": "resident-005",
+      "amount": 8500,
+      "type": "rent",
+      "month": "2025-01",
+      "status": "paid",
+      "method": "cash",
+      "reference": "PAY-250105-005",
+      "paidAt": "2025-01-05T09:00:00.000Z",
+      "createdAt": "2025-01-05T09:00:00.000Z"
+    }
+  ],
+  "visitors": [
+    {
+      "id": "visitor-001",
+      "residentId": "resident-001",
+      "visitorName": "Nisha Mehta",
+      "phone": "+91 98765 30001",
+      "purpose": "Family visit",
+      "visitDate": "2025-01-18",
+      "expectedAt": "15:00",
+      "status": "approved",
+      "checkInAt": null,
+      "checkOutAt": null,
+      "createdAt": "2025-01-16T10:00:00.000Z",
+      "updatedAt": "2025-01-16T12:00:00.000Z"
+    },
+    {
+      "id": "visitor-002",
+      "residentId": "resident-003",
+      "visitorName": "Arjun Rao",
+      "phone": "+91 98765 30002",
+      "purpose": "Family visit",
+      "visitDate": "2025-01-18",
+      "expectedAt": "16:30",
+      "status": "pending",
+      "checkInAt": null,
+      "checkOutAt": null,
+      "createdAt": "2025-01-17T09:00:00.000Z",
+      "updatedAt": "2025-01-17T09:00:00.000Z"
+    },
+    {
+      "id": "visitor-003",
+      "residentId": "resident-005",
+      "visitorName": "Dev Verma",
+      "phone": "+91 98765 30003",
+      "purpose": "Document delivery",
+      "visitDate": "2025-01-15",
+      "expectedAt": "12:00",
+      "status": "checked_out",
+      "checkInAt": "2025-01-15T11:50:00.000Z",
+      "checkOutAt": "2025-01-15T12:25:00.000Z",
+      "createdAt": "2025-01-14T08:00:00.000Z",
+      "updatedAt": "2025-01-15T12:25:00.000Z"
+    }
+  ],
+  "messMenus": [
+    {
+      "id": "menu-001",
+      "date": "2025-01-18",
+      "day": "Saturday",
+      "breakfast": "Poha, banana and tea",
+      "lunch": "Rajma, rice, roti and salad",
+      "snacks": "Samosa and tea",
+      "dinner": "Paneer butter masala, dal and rice",
+      "createdAt": "2025-01-15T08:00:00.000Z",
+      "updatedAt": "2025-01-15T08:00:00.000Z"
+    },
+    {
+      "id": "menu-002",
+      "date": "2025-01-19",
+      "day": "Sunday",
+      "breakfast": "Aloo paratha and curd",
+      "lunch": "Veg biryani and raita",
+      "snacks": "Fruit",
+      "dinner": "Dal makhani, roti and kheer",
+      "createdAt": "2025-01-15T08:00:00.000Z",
+      "updatedAt": "2025-01-15T08:00:00.000Z"
+    },
+    {
+      "id": "menu-003",
+      "date": "2025-01-20",
+      "day": "Monday",
+      "breakfast": "Idli, sambar and chutney",
+      "lunch": "Chole, rice, roti and salad",
+      "snacks": "Biscuits and tea",
+      "dinner": "Vegetable pulao and raita",
+      "createdAt": "2025-01-15T08:00:00.000Z",
+      "updatedAt": "2025-01-15T08:00:00.000Z"
+    }
+  ],
+  "attendance": [
+    {
+      "id": "attendance-001",
+      "residentId": "resident-001",
+      "date": "2025-01-18",
+      "meal": "breakfast",
+      "status": "present",
+      "markedAt": "2025-01-18T08:15:00.000Z"
+    },
+    {
+      "id": "attendance-002",
+      "residentId": "resident-002",
+      "date": "2025-01-18",
+      "meal": "breakfast",
+      "status": "present",
+      "markedAt": "2025-01-18T08:15:00.000Z"
+    },
+    {
+      "id": "attendance-003",
+      "residentId": "resident-003",
+      "date": "2025-01-18",
+      "meal": "breakfast",
+      "status": "absent",
+      "markedAt": "2025-01-18T08:15:00.000Z"
+    },
+    {
+      "id": "attendance-004",
+      "residentId": "resident-005",
+      "date": "2025-01-18",
+      "meal": "breakfast",
+      "status": "present",
+      "markedAt": "2025-01-18T08:15:00.000Z"
+    }
+  ],
+  "notices": [
+    {
+      "id": "notice-001",
+      "title": "Annual hostel maintenance",
+      "content": "Block B water supply will be interrupted from 10:00 to 13:00 on Sunday.",
+      "audience": "all",
+      "status": "published",
+      "authorId": "user-demo",
+      "createdAt": "2025-01-16T09:00:00.000Z",
+      "publishedAt": "2025-01-16T09:30:00.000Z",
+      "updatedAt": "2025-01-16T09:30:00.000Z"
+    },
+    {
+      "id": "notice-002",
+      "title": "Republic Day event registrations",
+      "content": "Residents can register with the warden for the Republic Day cultural programme.",
+      "audience": "residents",
+      "status": "published",
+      "authorId": "user-warden",
+      "createdAt": "2025-01-12T09:00:00.000Z",
+      "publishedAt": "2025-01-12T10:00:00.000Z",
+      "updatedAt": "2025-01-12T10:00:00.000Z"
+    },
+    {
+      "id": "notice-003",
+      "title": "New laundry schedule",
+      "content": "The updated laundry schedule is being reviewed.",
+      "audience": "all",
+      "status": "draft",
+      "authorId": "user-demo",
+      "createdAt": "2025-01-17T09:00:00.000Z",
+      "publishedAt": null,
+      "updatedAt": "2025-01-17T09:00:00.000Z"
+    }
+  ]
+}
